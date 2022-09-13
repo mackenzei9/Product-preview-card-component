@@ -1,0 +1,263 @@
+
+// GOOGLE FONTS
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+// VARIABLES
+$background-color: hsl(30, 38%, 92%);
+$box-background-color: hsl(0, 0%, 100%);
+$heading-color: hsl(212, 21%, 14%);
+$paragraph-colors: hsl(228, 12%, 48%);
+$button-price-color: hsl(158, 36%, 37%);
+$font-one: "Fraunces",'serif';
+$font-two: "Montserrat",'sans-serif';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+body{
+    font-family: $font-two;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .box{
+        width: 700px;
+        height: 525px;
+        background-color: $box-background-color;
+        border-radius: 10px;
+        display: flex;
+        overflow: hidden;
+    }
+    .image{
+        width: 50%;
+        height: 100%;
+    }
+    .desktop-image{
+        width: 100%;
+    .desktop{
+        width: 350px;
+    }
+    }
+    .mobile-image{
+        display: none;
+    }
+}
+
+.text{
+    width: 50%;
+    padding: 2.5rem;
+    .head{
+        width: fit-content;
+        font-size: small;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: $paragraph-colors;
+    }
+    h1{
+        font-size: 2.5rem;
+        font-family: $font-one;
+        font-weight:normal;
+        color: $heading-color;
+        margin: 1.7rem 0;
+        line-height: 2.7rem;
+    }
+    .description{
+        color: $paragraph-colors;
+        line-height: 1.8rem;
+    }
+    .price{
+        width: 80%;
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        color: $button-price-color;
+        .real{
+            font-family: $font-one;
+            font-size: 2rem;
+        }
+        .fake{
+            font-size: smaller;
+            text-decoration: line-through;
+            color: $paragraph-colors;
+            margin-left: 1rem;
+        }
+    }
+    .button{
+        background-color: $button-price-color;
+        color: $box-background-color;
+        width: fit-content;
+        padding: 1rem 4rem;
+        margin-top: 1.7rem;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover{
+            background-color: hsl(158deg 36% 16%);
+        }
+        i{
+            margin-right: 4px;
+        }
+    }
+    
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+
+    p {
+        font-size: 0.8rem;
+        text-align: center;
+        margin: 8px 0;
+    }
+
+    a {
+        color: $button-price-color;
+    }
+}
+
+
+// MEDIA QUERIES
+@media(max-width:1025px){
+    .container{
+       .box{
+        width: 500px;
+        height: 320px;
+        .image{
+            width: unset;
+            .desktop-image{
+                .desktop{
+                    width: 213px;
+                }
+            }
+        }
+        .text{
+            width: unset;
+            padding: 1.5rem;
+            .head{
+                font-size: 10px;
+            }
+            h1{
+                width: fit-content;
+                margin: 10px 0;
+                line-height: 2rem;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+            .description{
+                font-size: 13px;
+                line-height: 1.3rem;
+                
+            }
+            .price{
+                margin-top: .9rem;
+                .real{
+                    font-size: 1.3rem;
+                }
+                .fake{
+                    font-size:14px;
+                }
+            }
+            .button{
+                margin-top: 1.5rem ;
+                padding: 0.5rem 2rem;
+            }
+        }
+       }
+    }
+}
+
+
+// @media(max-width:769px){
+//     .container{
+//         .box{
+//             width: 60%;
+//             height: unset;
+//             flex-direction: column;
+//             .image{
+//                 width: 100%;
+//                 height: unset;
+//                 .desktop-image{
+//                     display: none;
+//                 }
+//                 .mobile-image{
+//                     display: block;
+//                     .mobile{
+//                         max-width: 100%;
+//                     }
+//                 }
+//             }
+//             .text{
+//                 width: 100%;
+//                 padding: 2rem;
+//                 .price{
+//                     width: 70%;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+@media(max-width:532px){
+    .container{
+        .box{
+            width: 90%;
+            height: unset;
+            flex-direction: column;
+            
+            .image{
+                width: 100%;
+                height: unset;
+                .desktop-image{
+                    display: none;
+                }
+                .mobile-image{
+                    display: block;
+                    width: 100%;
+                    .mobile{
+                        max-width: 100%;
+                    }
+                }
+            }
+            .text{
+                width: 100%;
+                padding: 2rem;
+                .head{
+                    font-size:14px;
+                }
+                h1{
+                    font-size: 1.7rem;
+                }
+                .price{
+                    width: 85%;
+                    .real{
+                        font-size: 1.9rem;
+                    }
+                }
+                .button{
+                    padding: 1rem 4rem;
+                }
+            }
+        }
+        .footer{
+            position: absolute;
+            bottom: 8px;
+            p{
+                font-size: 0.7rem;
+            }
+        }
+    }
+}
+
+
